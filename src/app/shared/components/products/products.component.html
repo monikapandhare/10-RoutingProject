@@ -1,0 +1,11 @@
+<div class="row">
+    <div class="col-md-4">
+        <ul class="list-group">
+            <li class="list-group-item"
+            [routerLink]="['/products',product.pId]"
+            *ngFor="let product of pArray">
+                {{product.pName}}
+            </li>
+        </ul>
+    </div>
+</div>

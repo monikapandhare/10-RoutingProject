@@ -1,5 +1,6 @@
 import { Injectable } from '@angular/core';
 import { Iproducts, ProductStatus } from '../models/productsinterface';
+import { Router } from '@angular/router';
 
 @Injectable({
   providedIn: 'root'
@@ -14,7 +15,7 @@ public productsArray  :Array<Iproducts> = [
   {
     pName : "sony 32",
     pId : 456,
-    pStatus : ProductStatus.Dispatched
+    pStatus :ProductStatus.Dispatched
   },
   {
     pName : "Lenovo",
@@ -22,7 +23,7 @@ public productsArray  :Array<Iproducts> = [
     pStatus : ProductStatus.Delivered
   },
 ]
-  constructor() { }
+  constructor(private _router:Router) { }
  getAllProducts(){
   return this.productsArray;
  }
@@ -31,4 +32,16 @@ public productsArray  :Array<Iproducts> = [
     return product.pId === id
   })!
  }
+ getUpdateProduct(prdtObj : Iproducts){
+   this.productsArray.forEach(prd=>{
+    if(prd.pId === prdtObj.pId){
+      prd.pName = prdtObj.pName,
+      prd.pStatus = prdtObj.pStatus,
+      prd.pId = prdtObj.pId
+      this._router.navigate(['/products'])
+    }
+   })
+ }
+ 
+   
 }

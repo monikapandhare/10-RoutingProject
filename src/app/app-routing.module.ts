@@ -6,6 +6,8 @@ import { ProductsComponent } from './shared/components/products/products.compone
 import { PageNotFoundComponent } from './shared/components/page-not-found/page-not-found.component';
 import { UserComponent } from './shared/components/users/user/user.component';
 import { ProductComponent } from './shared/components/products/product/product.component';
+import { EditProductComponent } from './shared/components/products/product/edit-product/edit-product.component';
+import { EditUserComponent } from './shared/components/users/user/edit-user/edit-user.component';
 
 const routes: Routes = [
   {
@@ -21,10 +23,17 @@ const routes: Routes = [
     path : 'users/:userId', component : UserComponent,
   },
   {
+    path : 'users/:userId/editUser', component : EditUserComponent,
+  },
+ 
+  {
     path : 'products', component : ProductsComponent,
   },
   {
     path : 'products/:pId', component : ProductComponent,
+  },
+  {
+    path : 'products/:pId/edit', component : EditProductComponent,
   },
   {
     path : 'page-not-found', component : PageNotFoundComponent

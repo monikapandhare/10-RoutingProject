@@ -1,1 +1,23 @@
-<p>Hello I'm {{singleUser.userName}} and this is my id {{singleUser.userId}} </p>
+<p>Hello I'm <strong>{{userObj.userName}} </strong> and this is my id  <strong>{{userObj.userId}}</strong> and email <strong>{{userObj.userEmail}}</strong></p>
+
+
+<!--  ABSOLUTE ROUTING -->
+<!-- <button mat-raised-button color="primary"
+[routerLink]="['/users',userObj.userId,'editUser']">
+   Edit User Details
+</button> --> 
+
+<!-- RELATIVE ROUTING -->
+
+<button mat-raised-button color="primary"
+[routerLink]="['editUser']">
+   Edit User Details
+</button> 
+
+
+
+
+
+<!-- <button mat-raised-button color="primary"
+[routerLink]="['/users', 1]"
+>click on Monika</button> -->

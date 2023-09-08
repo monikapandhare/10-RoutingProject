@@ -3,3 +3,13 @@
     This product <strong>{{productInfo.pName}}</strong> having id <strong>{{productInfo.pId}}</strong> and
     productStatus is <strong>{{productInfo.pStatus}}</strong>
 </p>
+
+<button class="mr-2" mat-raised-button color="primary"
+[routerLink]="['/products', 456]"
+>click on Sony32</button>
+
+<button class="mr-2" mat-raised-button color="accent"
+[routerLink]="['/products',productInfo.pId, 'edit']"
+>Edit product</button>
+
+

@@ -1,5 +1,5 @@
 import { Component, OnInit } from '@angular/core';
-import { ActivatedRoute } from '@angular/router';
+import { ActivatedRoute, Params } from '@angular/router';
 import { Iusers } from 'src/app/shared/models/usersInterface';
 import { UsersService } from 'src/app/shared/services/users.service';
 
@@ -10,15 +10,23 @@ import { UsersService } from 'src/app/shared/services/users.service';
 })
 export class UserComponent implements OnInit {
 public userId!: number;
-public singleUser! : Iusers;
+public userObj! : Iusers;
   constructor(private _routes : ActivatedRoute, private _usersService : UsersService) { }
 
   ngOnInit(): void {
     this.userId = +this._routes.snapshot.params['userId'] // id
     console.log(this.userId);
     
-    this.singleUser = this._usersService.getSingleUser(this.userId)
-    console.log(this.singleUser);
+    this.userObj = this._usersService.getSingleUser(this.userId)
+    console.log(this.userObj);
+
+    this._routes.params
+            .subscribe((params: Params) => {
+              this.userId = +params['userId'];
+              this.userObj = this._usersService.getSingleUser(this.userId)
+              console.log(this.userObj);
+              
+            })
     
   }
 

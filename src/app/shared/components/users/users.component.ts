@@ -9,11 +9,15 @@ import { Iusers } from '../../models/usersInterface';
 })
 export class UsersComponent implements OnInit {
   public userInfo : Array<Iusers> = []
-  constructor(private _userService : UsersService) { }
+  public selectedUserId! : string;
+  constructor(private _userService : UsersService,
+                ) { }
 
   ngOnInit(): void {
     this.userInfo = this._userService.getAllUsers()
     console.log(this.userInfo)
   }
+
+ 
 
 }

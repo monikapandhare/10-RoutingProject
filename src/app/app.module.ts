@@ -16,6 +16,7 @@ import { EditProductComponent } from './shared/components/products/product/edit-
 import { EditUserComponent } from './shared/components/users/user/edit-user/edit-user.component';
 
 
+
 @NgModule({
   declarations: [
     AppComponent,
@@ -26,7 +27,8 @@ import { EditUserComponent } from './shared/components/users/user/edit-user/edit
     ProductsComponent,
     ProductComponent,
     EditProductComponent,
-    EditUserComponent
+    EditUserComponent,
+   
 
   ],
   imports: [
@@ -35,6 +37,7 @@ import { EditUserComponent } from './shared/components/users/user/edit-user/edit
     BrowserAnimationsModule,
     RouterModule,
     MatButtonModule
+    
    
   
   ],

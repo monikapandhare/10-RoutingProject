@@ -1,11 +1,23 @@
 <div class="row">
-    <div class="col-md-4 offset-4">
+    <div class="col-md-4">
         <ul class="list-group  mt-4">
             <li class="list-group-item"
-            [routerLink]="['/products',product.pId]"
-            *ngFor="let product of pArray">
-                {{product.pName}}
+                [routerLink]="['/products',product.pId]"
+                [queryParams]="{canEdit : product.canReturn}"
+                *ngFor="let product of pArray"
+                (click)="selectedPrdId = product.pId"
+                [class.active]="selectedPrdId === product.pId"
+                >
+                    {{product.pName}}
             </li>
         </ul>
+        <button mat-raised-button class="m-2" color="primary"
+            [routerLink]="['/products','addProducts']"
+            >
+             Add Product Details
+        </button> 
+    </div>
+    <div class="col-md-8">
+        <router-outlet></router-outlet>
     </div>
 </div>

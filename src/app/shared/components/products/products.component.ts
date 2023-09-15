@@ -8,12 +8,16 @@ import { Iproducts } from '../../models/productsinterface';
   styleUrls: ['./products.component.scss']
 })
 export class ProductsComponent implements OnInit {
-public pArray : Array<Iproducts>=[]
+public pArray : Array<Iproducts>=[];
+public selectedPrdId ! :string;
+defaultSelectProdct! : Iproducts 
   constructor(private _productService:ProductsService) { }
 
   ngOnInit(): void {
     this.pArray=this._productService.getAllProducts()
     console.log(this.pArray);
+    this.defaultSelectProdct =  this.pArray[0]
+    console.log(this.defaultSelectProdct)
     
   }
 

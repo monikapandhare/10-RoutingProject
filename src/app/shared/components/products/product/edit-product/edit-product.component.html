@@ -1,23 +1,39 @@
 <div class="row">
-    <div class="col-sm-8 offset-sm-2">
-        <div class="form-group">
+    <div class="col-md-8">
+        <p class="alert alert-success mt-4" *ngIf="!canEdit" >
+            This product can not be Returned !!!
+        </p>
+        <div class="form-group" >
             <label for="pname">Product Name</label>
-            <input type="text" #pname [value]="productObj.pName" id="pName" class="form-control">
+            <input type="text" 
+             #pname [value]="productObj?productObj.pName:''" 
+             id="pName" class="form-control"
+             [disabled]="!canEdit">
         </div>
         <div class="form-group">
             <label for="pstatus">Product Status</label>
-            <select id="pstatus" #pstatus [value]="productObj.pStatus" class="form-control">
+            <select id="pstatus" [disabled]="!canEdit" #pstatus [value]="productObj?productObj.pStatus:''" class="form-control">
                 <option value="In Progress"  id="inprogress">In Progress</option>
                 <option value="Dispatched"  id="dispatched">Dispatched</option>
                 <option value="Delivered"  id="delivered">Delivered</option>
             </select>
         </div> 
-        <div class="text-right">
-            <button class="mr-2" mat-raised-button color="accent"
+
+       <ng-template *ngIf="canEdit">
+        <div class="text-right" >
+            <button class="mr-2" #canEdit *ngIf="canEdit"   mat-raised-button color="accent"
                 (click)="onUpdatePrdct(pname,pstatus)"
-                >Update product
+               >Update product
             </button>
         </div>
+       </ng-template>
+       <div class="text-right" >
+            <button class="btn btn-info" 
+                    
+            (click)="onAddPrd(pname,pstatus)">
+                Add Products
+            </button>
+        </div>    
     </div>
 </div>
 

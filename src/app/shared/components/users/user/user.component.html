@@ -8,12 +8,24 @@
 </button> --> 
 
 <!-- RELATIVE ROUTING -->
-
-<button mat-raised-button color="primary"
-[routerLink]="['editUser']">
+<div class="text-right">
+   
+<button mat-raised-button color="primary" class="mr-2"
+(click)="onEditUser()">
    Edit User Details
 </button> 
 
+<button mat-raised-button color="accent"
+(click)="onRemoveUser()">
+   remove User
+</button> 
+</div>
+
+
+
+<!-- If want routing in template -->
+<!-- [routerLink]="['editUser']"
+[queryParamsHandling]="'preserve'"  --> 
 
 
 

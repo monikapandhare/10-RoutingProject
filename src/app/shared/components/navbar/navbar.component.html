@@ -6,7 +6,7 @@
     </button>
   
     <div class="collapse navbar-collapse" id="navbarSupportedContent">
-      <ul class="navbar-nav ml-auto">
+      <ul class="navbar-nav mr-auto">
         <li class="nav-item" 
         [routerLinkActiveOptions]="{exact : true}"
         routerLinkActive="active">
@@ -20,10 +20,13 @@
         <li class="nav-item" routerLinkActive="active">
             <a class="nav-link" routerLink="products">products</a>
           </li>
-      
-       
       </ul>
-     
+      <div class="text-right">
+        <button class="btn btn-outline-info"
+        (click)="toLogin()">Login</button>
+        <button class="btn btn-outline-danger ml-2"
+        (click)="toLogOut()">LogOut</button>
+      </div>
     </div>
   </nav>
 

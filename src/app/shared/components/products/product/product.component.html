@@ -10,6 +10,12 @@
 
 <button class="mr-2" mat-raised-button color="accent"
 [routerLink]="['/products',productInfo.pId, 'edit']"
+[queryParamsHandling]="'preserve'"
 >Edit product</button>
+
+
+<button class="mr-2" mat-raised-button color="primary"
+(click)="onRemoveProduct()"
+>Remove product</button>
 
 

@@ -1,9 +1,11 @@
 
 
 export interface Iproducts{
+  
     pName: string;
-    pId: number;
+    pId: string;
     pStatus: ProductStatus;
+    canReturn : number;
 }
 
 export enum ProductStatus{

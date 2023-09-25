@@ -1,0 +1,85 @@
+<div class="main">
+    <div class="card auth-form">
+        <div class="card-body">
+            <div class="login" *ngIf="allreadyHadAccount">
+                <h2 class="mb-3">Login</h2>
+                    <div class="mb-3">   
+                        <label class="sr-only" for="username">Username</label>
+                            <div class="input-group mb-2">
+                                <input type="text" 
+                                class="form-control"
+                                #username id="username" 
+                                placeholder="Username">
+
+                                <div class="input-group-prepend">
+                                    <div class="input-group-text"><i class="fas fa-envelope"></i></div>
+                                </div>
+                            </div>
+                    </div>
+               <div>
+                    <label class="sr-only" for="text">Password</label>
+                        <div class="input-group mb-2">
+                            <input [type]="passwordType ? 'password' : 'text'"  class="form-control" #password appPreventcopypaste
+                            id="password" placeholder="password">
+                            <div class="input-group-prepend">
+                                <div class="input-group-text" (click)="onlockunlock()">
+                                    <i class="fas" [ngClass]="visiblepass ? 'fa-lock' : 'fa-unlock'"></i>
+                                </div>
+                            </div>
+                        </div>
+               </div>   
+               <div class="text-right">
+                <button 
+                (click)="logIn(username.value,password.value)"
+                class="btn btn-primary">
+                    Login
+                </button>
+               </div>     
+           </div>
+           <div class="signup" *ngIf="!allreadyHadAccount">
+            <h2 class="mb-3">Create account</h2>
+                <div class="mb-3">   
+                    <label class="sr-only" for="username">Username</label>
+                        <div class="input-group mb-2">
+                            <input type="text" class="form-control" id="username" placeholder="Username">
+                            <div class="input-group-prepend">
+                                <div class="input-group-text"><i class="fas fa-envelope"></i></div>
+                            </div>
+                        </div>
+                </div>
+           <div>
+                <label class="sr-only" for="password">Password</label>
+                    <div class="input-group mb-2">
+                        <input type="Password" class="form-control" appPreventcopypaste id="password" placeholder="password">
+                        <div class="input-group-prepend">
+                            <div class="input-group-text">
+                                <i class="fas fa-lock"></i></div>
+                        </div>
+                    </div>
+                    <label class="sr-only" for="password">Password</label>
+                    <div class="input-group mb-2">
+                        <input type="Password" class="form-control" appPreventcopypaste id="password" placeholder="password">
+                        <div class="input-group-prepend">
+                            <div class="input-group-text">
+                                <i class="fas fa-lock"></i>
+                            </div>
+                        </div>
+                    </div>
+           </div>   
+           <div class="text-right">
+            <button class="btn btn-primary">
+                Sign Up
+            </button>
+           </div>     
+       </div>
+           <p>
+                <a href="javascript:;" *ngIf="allreadyHadAccount"
+                (click)="allreadyHadAccount = !allreadyHadAccount" class="btn btn-link">Don't have account Yet</a>
+           </p>
+           <p>
+            <a href="javascript:;" *ngIf="!allreadyHadAccount"
+            (click)="allreadyHadAccount = !allreadyHadAccount" class="btn btn-link">Already Had Account .</a>
+       </p>
+        </div>
+    </div>
+</div>

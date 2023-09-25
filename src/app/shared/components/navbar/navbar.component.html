@@ -7,23 +7,29 @@
   
     <div class="collapse navbar-collapse" id="navbarSupportedContent">
       <ul class="navbar-nav mr-auto">
-        <li class="nav-item" 
-        [routerLinkActiveOptions]="{exact : true}"
-        routerLinkActive="active">
-          <a class="nav-link" routerLink="">Home <span class="sr-only">(current)</span></a>
-        </li>
+          <li class="nav-item" 
+          [routerLinkActiveOptions]="{exact : true}"
+          routerLinkActive="active">
+            <a class="nav-link" routerLink="/home">Home <span class="sr-only">(current)</span></a>
+          </li>
 
-        <li class="nav-item" routerLinkActive="active">
-          <a class="nav-link" routerLink="users">users</a>
-        </li>
+          <li class="nav-item" routerLinkActive="active">
+            <a class="nav-link" routerLink="users">users</a>
+          </li>
 
-        <li class="nav-item" routerLinkActive="active">
+          <li class="nav-item" routerLinkActive="active">
             <a class="nav-link" routerLink="products">products</a>
+          </li>
+          <li class="nav-item" routerLinkActive="active">
+            <a class="nav-link" routerLink="admins">Admins</a>
+          </li>
+          <li class="nav-item" routerLinkActive="active">
+            <a class="nav-link" routerLink="superAdmins">SuperAdmins</a>
           </li>
       </ul>
       <div class="text-right">
-        <button class="btn btn-outline-info"
-        (click)="toLogin()">Login</button>
+        <!-- <button class="btn btn-outline-info"
+        (click)="toLogin()">Login</button> -->
         <button class="btn btn-outline-danger ml-2"
         (click)="toLogOut()">LogOut</button>
       </div>
